@@ -1,7 +1,6 @@
 package nag_test
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/ronaudinho/nag"
@@ -25,28 +24,4 @@ func TestScoreBoardV2_Get(t *testing.T) {
 	if !isExpected(m, expect.ScoreBoardV2) {
 		t.Error("unexpected datasets")
 	}
-}
-
-func isExpected(m map[string]interface{}, expect map[string][]string) bool {
-	for k, headers := range expect {
-		vv, ok := m[k]
-		if !ok {
-			fmt.Printf("%s does not exist\n", k)
-			return false
-		}
-
-		rows, _ := vv.([]map[string]interface{})
-		if len(rows) == 0 {
-			continue
-		}
-
-		row := rows[0]
-		for _, h := range headers {
-			if _, ok := row[h]; !ok {
-				fmt.Printf("%s.%s does not exist\n", k, h)
-				return false
-			}
-		}
-	}
-	return true
 }
