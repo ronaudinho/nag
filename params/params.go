@@ -1,4 +1,4 @@
-package nag
+package params
 
 import (
 	"fmt"
@@ -188,12 +188,12 @@ var (
 // StartPeriod(Period):
 // EndPeriod(Period):
 
-type PerModeSimple string
+type PerMode string
 
 var (
-	Totals               PerModeSimple = "Totals"
-	PerGame                            = "PerGame"
-	DefaultPerModeSimple               = Totals
+	Totals         PerMode = "Totals"
+	PerGame                = "PerGame"
+	DefaultPerMode         = Totals
 )
 
 // PerMode36(PerModeSimple):

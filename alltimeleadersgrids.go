@@ -5,14 +5,16 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+
+	"github.com/ronaudinho/nag/params"
 )
 
 // AllTimeLeadersGrids wraps request to and response from alltimeleadergrids endpoint.
 type AllTimeLeadersGrids struct {
 	*Client
-	LeagueID   string
-	PerMode    string
-	SeasonType string
+	LeagueID   params.LeagueID
+	PerMode    params.PerMode
+	SeasonType params.SeasonType
 	TopX       int
 
 	Response *Response
@@ -22,9 +24,9 @@ type AllTimeLeadersGrids struct {
 func NewAllTimeLeadersGrids() *AllTimeLeadersGrids {
 	return &AllTimeLeadersGrids{
 		Client:     NewDefaultClient(),
-		LeagueID:   "00",
-		PerMode:    "Totals",
-		SeasonType: "Regular Season",
+		LeagueID:   params.NBA,
+		PerMode:    params.Totals,
+		SeasonType: params.Regular,
 		TopX:       10,
 	}
 }
@@ -39,9 +41,9 @@ func (c *AllTimeLeadersGrids) Get() error {
 	req.Header = DefaultStatsHeader
 
 	q := req.URL.Query()
-	q.Add("LeagueID", c.LeagueID)
-	q.Add("PerMode", c.PerMode)
-	q.Add("SeasonType", c.SeasonType)
+	q.Add("LeagueID", string(c.LeagueID))
+	q.Add("PerMode", string(c.PerMode))
+	q.Add("SeasonType", string(c.SeasonType))
 	q.Add("TopX", strconv.Itoa(c.TopX))
 	req.URL.RawQuery = q.Encode()
 

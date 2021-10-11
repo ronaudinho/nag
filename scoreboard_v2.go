@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/ronaudinho/nag/params"
 )
 
 // ScoreBoardV2 wraps request to and response from scoreboardv2 endpoint.
@@ -13,7 +15,7 @@ type ScoreBoardV2 struct {
 	*Client
 	DayOffset int
 	GameDate  string
-	LeagueID  string
+	LeagueID  params.LeagueID
 
 	Response *Response
 }
@@ -24,7 +26,7 @@ func NewScoreBoardV2() *ScoreBoardV2 {
 		Client:    NewDefaultClient(),
 		DayOffset: 0,
 		GameDate:  time.Now().Format("2006-01-02"),
-		LeagueID:  "00",
+		LeagueID:  params.NBA,
 	}
 }
 
@@ -40,7 +42,7 @@ func (c *ScoreBoardV2) Get() error {
 	q := req.URL.Query()
 	q.Add("DayOffset", strconv.Itoa(c.DayOffset))
 	q.Add("GameDate", c.GameDate)
-	q.Add("LeagueID", c.LeagueID)
+	q.Add("LeagueID", string(c.LeagueID))
 	req.URL.RawQuery = q.Encode()
 
 	b, err := c.Do(req)

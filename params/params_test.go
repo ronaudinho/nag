@@ -1,10 +1,10 @@
-package nag_test
+package params_test
 
 import (
 	"testing"
 	"time"
 
-	"github.com/ronaudinho/nag"
+	"github.com/ronaudinho/nag/params"
 )
 
 // probably PBT here
@@ -26,7 +26,7 @@ func TestSeason(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.in, func(t *testing.T) {
 			tim, _ := time.Parse("2006-01-02", tt.in)
-			got := nag.Season(tim)
+			got := params.Season(tim)
 			if got != tt.want {
 				t.Errorf("want %s, got %s", tt.want, got)
 			}
