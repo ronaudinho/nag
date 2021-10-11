@@ -128,7 +128,7 @@ var (
 
 type LeagueID string
 
-var (
+const (
 	NBA             LeagueID = "00"
 	ABA                      = "01"
 	WNBA                     = "10"
@@ -190,7 +190,7 @@ var (
 
 type PerMode string
 
-var (
+const (
 	Totals         PerMode = "Totals"
 	PerGame                = "PerGame"
 	DefaultPerMode         = Totals
@@ -212,7 +212,7 @@ var (
 
 type PlayerOrTeam string
 
-var (
+const (
 	Player              PlayerOrTeam = "Player"
 	Team                             = "Team"
 	DefaultPlayerOrTeam              = Team
@@ -229,10 +229,10 @@ var (
 type PlayerPosition string
 
 var (
-	Guard                 = "Guard"
-	Forward               = "Forward"
-	Center                = "Center"
-	DefaultPlayerPosition = Guard
+	Guard                 PlayerPosition = "Guard"
+	Forward                              = "Forward"
+	Center                               = "Center"
+	DefaultPlayerPosition                = Guard
 )
 
 type PlayerPositionAbbreviation string
@@ -343,7 +343,7 @@ var (
 
 type SeasonType string
 
-var (
+const (
 	Regular           SeasonType = "Regular Season"
 	PreSeason                    = "Pre Season"
 	DefaultSeasonType            = Regular
