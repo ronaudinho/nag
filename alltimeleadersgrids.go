@@ -24,9 +24,9 @@ type AllTimeLeadersGrids struct {
 func NewAllTimeLeadersGrids() *AllTimeLeadersGrids {
 	return &AllTimeLeadersGrids{
 		Client:     NewDefaultClient(),
-		LeagueID:   params.NBA,
-		PerMode:    params.Totals,
-		SeasonType: params.Regular,
+		LeagueID:   params.DefaultLeagueID,
+		PerMode:    params.DefaultPerMode,
+		SeasonType: params.DefaultSeasonType,
 		TopX:       10,
 	}
 }

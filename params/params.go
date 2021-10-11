@@ -8,7 +8,7 @@ import (
 
 type AheadBehind string
 
-var (
+const (
 	AheadOrBehind      AheadBehind = "Ahead or Behind"
 	BehindOrTied                   = "Behind or Tied"
 	AheadOrTied                    = "Ahead or Tied"
@@ -17,7 +17,7 @@ var (
 
 type ClutchTime string
 
-var (
+const (
 	Last5Minutes      ClutchTime = "Last 5 Minutes"
 	Last4Minutes                 = "Last 4 Minutes"
 	Last3Minutes                 = "Last 3 Minutes"
@@ -30,7 +30,7 @@ var (
 
 type Conference string
 
-var (
+const (
 	EastConference    Conference = "East"
 	WestConference               = "West"
 	NoneConference               = ""
@@ -42,7 +42,7 @@ var (
 
 type DefenseCategory string
 
-var (
+const (
 	Overall                DefenseCategory = "Overall"
 	Threes                                 = "3 Pointers"
 	Twos                                   = "2 Pointers"
@@ -54,7 +54,7 @@ var (
 
 type Direction string
 
-var (
+const (
 	Asc  Direction = "ASC"
 	Desc           = "DESC"
 
@@ -63,7 +63,7 @@ var (
 
 type DistanceRange string
 
-var (
+const (
 	Range5ft             DistanceRange = "5ft Range"
 	Range8ft                           = "8ft Range"
 	ByZone                             = "By Zone"
@@ -72,7 +72,7 @@ var (
 
 type DivisionSimple string
 
-var (
+const (
 	Atlantic              DivisionSimple = "Atlantic"
 	Central                              = "Central"
 	Northwest                            = "Northwest"
@@ -84,7 +84,7 @@ var (
 
 type Division string
 
-var (
+const (
 	EastDivision    Division = "East"
 	WestDivision             = "West"
 	DefaultDivision          = EastDivision
@@ -92,7 +92,7 @@ var (
 
 type GameScopeSimple string
 
-var (
+const (
 	Last10                 GameScopeSimple = "Last 10"
 	Yesterday                              = "Yesterday"
 	DefaultGameScopeSimple                 = Last10
@@ -101,15 +101,15 @@ var (
 // GameScopeDetailed(GameScopeSimple):
 type GameScopeDetailed string
 
-var (
-	SeasonGameScopeDetailed  GameScopeDetailed = "Season"
-	FinalsGameScopeDetailed                    = "Finals"
-	DefaultGameScopeDetailed                   = Season
+const (
+	GameScopeDetailedSeason  GameScopeDetailed = "Season"
+	GameScopeDetailedFinals                    = "Finals"
+	DefaultGameScopeDetailed                   = GameScopeDetailedSeason
 )
 
 type GameSegment string
 
-var (
+const (
 	FirstHalf          GameSegment = "First Half"
 	SecondHalf                     = "Second Half"
 	Overtime                       = "Overtime"
@@ -138,7 +138,7 @@ const (
 
 type Location string
 
-var (
+const (
 	Home            Location = "Home"
 	Road                     = "Road"
 	DefaultLocation          = Home
@@ -146,7 +146,7 @@ var (
 
 type MeasureTypeBase string
 
-var (
+const (
 	Base                   MeasureTypeBase = "Base"
 	DefaultMeasureTypeBase                 = Base
 )
@@ -161,7 +161,7 @@ var (
 
 type Outcome string
 
-var (
+const (
 	Win            Outcome = "W"
 	Loss                   = "L"
 	DefaultOutcome         = Win
@@ -174,15 +174,18 @@ var (
 
 type Period string
 
+const (
+	PeriodAll     Period = "0"
+	PeriodFirst          = "1"
+	PeriodSecond         = "2"
+	PeriodThird          = "3"
+	PeriodFourth         = "4"
+	DefaultPeriod        = PeriodAll
+)
+
 var (
-	AllPeriod      Period = "0"
-	FirstPeriod           = "1"
-	SecondPeriod          = "2"
-	ThirdPeriod           = "3"
-	FourthPeriod          = "4"
-	QuarterPeriod         = func(i int) string { return strconv.Itoa(i) }
-	OvertimePeriod        = func(i int) string { return strconv.Itoa(4 + i) }
-	DefaultPeriod         = AllPeriod
+	PeriodQuarter  = func(i int) string { return strconv.Itoa(i) }
+	PeriodOvertime = func(i int) string { return strconv.Itoa(4 + i) }
 )
 
 // StartPeriod(Period):
@@ -203,7 +206,7 @@ const (
 
 type PlayerExperience string
 
-var (
+const (
 	Rookie                  PlayerExperience = "Rookie"
 	Sophomore                                = "Sophomore"
 	Veteran                                  = "Veteran"
@@ -220,7 +223,7 @@ const (
 
 type PlayerOrTeamAbbreviation string
 
-var (
+const (
 	P                               PlayerOrTeamAbbreviation = "P"
 	T                                                        = "T"
 	DefaultPlayerOrTeamAbbreviation                          = Team
@@ -228,7 +231,7 @@ var (
 
 type PlayerPosition string
 
-var (
+const (
 	Guard                 PlayerPosition = "Guard"
 	Forward                              = "Forward"
 	Center                               = "Center"
@@ -237,7 +240,7 @@ var (
 
 type PlayerPositionAbbreviation string
 
-var (
+const (
 	G                                 PlayerPositionAbbreviation = "G"
 	F                                                            = "F"
 	C                                                            = "C"
@@ -250,7 +253,7 @@ var (
 
 type PlayerScope string
 
-var (
+const (
 	AllPlayers         PlayerScope = "All Players"
 	Rookies                        = "Rookies"
 	DefaultPlayerScope             = AllPlayers
@@ -261,7 +264,7 @@ var (
 
 type PlayType string
 
-var (
+const (
 	Transition      PlayType = "Transition"
 	Isolation                = "Isolation"
 	PRBallHandler            = "PRBallHandler"
@@ -283,7 +286,7 @@ var (
 
 type PtMeasureType string
 
-var (
+const (
 	SpeedDistance        PtMeasureType = "SpeedDistance"
 	Rebounding                         = "Rebounding"
 	Possessions                        = "Possessions"
@@ -301,22 +304,22 @@ var (
 
 type RangeType string
 
-var DefaultRangeType = "0"
+const DefaultRangeType = "0"
 
 // Rank(_YesNo):
 // RankNo(_No):
 
 type RunType string
 
-var DefaultRunType RunType = "each second"
+const DefaultRunType RunType = "each second"
 
 type StartRange string
 
-var DefaultStartRange = "0"
+const DefaultStartRange = "0"
 
 type Scope string
 
-var (
+const (
 	RSScope      Scope = "RS"
 	SScope             = "S"
 	RookiesScope       = "Rookies"
@@ -354,7 +357,7 @@ const (
 
 type SeasonSegment string
 
-var (
+const (
 	PostAllStar          SeasonSegment = "Post All-Star"
 	PreAllStar                         = "Pre All-Star"
 	DefaultSeasonSegment               = PostAllStar
@@ -362,7 +365,7 @@ var (
 
 type ShotClockRange string
 
-var (
+const (
 	Range2224             ShotClockRange = "24-22"
 	Range1822                            = "22-18 Very Early"
 	Range1518                            = "18-15 Early"
@@ -397,31 +400,31 @@ func CalculateRange(i int64) ShotClockRange {
 
 type Sorter string
 
-var (
-	FGMSorter     Sorter = "FGM"
-	FGASorter            = "FGA"
-	FG_PCTSorter         = "FG_PCT"
-	FG3MSorter           = "FG3M"
-	FG3ASorter           = "FG3A"
-	FG3_PCTSorter        = "FG3_PCT"
-	FTMSorter            = "FTM"
-	FTASorter            = "FTA"
-	FT_PCTSorter         = "FT_PCT"
-	OREBSorter           = "OREB"
-	DREBSorter           = "DREB"
-	ASTSorter            = "AST"
-	STLSorter            = "STL"
-	BLKSorter            = "BLK"
-	TOVSorter            = "TOV"
-	REBSorter            = "REB"
-	PTSSorter            = "PTS"
-	DateSorter           = "DATE"
-	DefaultSorter        = DateSorter
+const (
+	SorterFGM     Sorter = "FGM"
+	SorterFGA            = "FGA"
+	SorterFG_PCT         = "FG_PCT"
+	SorterFG3M           = "FG3M"
+	SorterFG3A           = "FG3A"
+	SorterFG3_PCT        = "FG3_PCT"
+	SorterFTM            = "FTM"
+	SorterFTA            = "FTA"
+	SorterFT_PCT         = "FT_PCT"
+	SorterOREB           = "OREB"
+	SorterDREB           = "DREB"
+	SorterAST            = "AST"
+	SorterSTL            = "STL"
+	SorterBLK            = "BLK"
+	SorterTOV            = "TOV"
+	SorterREB            = "REB"
+	SorterPTS            = "PTS"
+	SorterDate           = "DATE"
+	DefaultSorter        = SorterDate
 )
 
 type StarterBench string
 
-var (
+const (
 	Starters            StarterBench = "Starters"
 	Bench                            = "Bench"
 	DefaultStarterBench              = Starters
@@ -429,36 +432,36 @@ var (
 
 type Stat string
 
-var (
-	PointsStat           Stat = "PTS"
-	ReboundsStat              = "REB"
-	AssistsStat               = "AST"
-	FieldGoalPercentStat      = "FG_PCT"
-	FreeThrowPercentStat      = "FT_PCT"
-	ThreesPercentStat         = "FG3_PCT"
-	StealsStat                = "STL"
-	BlocksStat                = "BLK"
-	DefaultStat               = PointsStat
+const (
+	Points           Stat = "PTS"
+	Rebounds              = "REB"
+	Assists               = "AST"
+	FieldGoalPercent      = "FG_PCT"
+	FreeThrowPercent      = "FT_PCT"
+	ThreesPercent         = "FG3_PCT"
+	Steals                = "STL"
+	Blocks                = "BLK"
+	DefaultStat           = Points
 )
 
 type StatCategory string
 
-var (
-	PointsStatCategory           StatCategory = "Points"
-	ReboundsStatCategory                      = "Rebounds"
-	AssistsStatCategory                       = "Assists"
-	DefenseStatCategory                       = "Defense"
-	ClutchStatCategory                        = "Clutch"
-	PlaymakingStatCategory                    = "Playmaking"
-	EfficiencyStatCategory                    = "Efficiency"
-	FastBreakStatCategory                     = "Fast Break"
-	ScoringBreakdownStatCategory              = "Scoring Breakdown"
-	DefaultStatCategory                       = PointsStatCategory
+const (
+	StatCategoryPoints           StatCategory = "Points"
+	StatCategoryRebounds                      = "Rebounds"
+	StatCategoryAssists                       = "Assists"
+	StatCategoryDefense                       = "Defense"
+	StatCategoryClutch                        = "Clutch"
+	StatCategoryPlaymaking                    = "Playmaking"
+	StatCategoryEfficiency                    = "Efficiency"
+	StatCategoryFastBreak                     = "Fast Break"
+	StatCategoryScoringBreakdown              = "Scoring Breakdown"
+	DefaultStatCategory                       = StatCategoryPoints
 )
 
 type StatCategoryAbbreviation string
 
-var (
+const (
 	PTS                             StatCategoryAbbreviation = "PTS"
 	FGM                                                      = "FGM"
 	FGA                                                      = "FGA"
@@ -480,7 +483,7 @@ var (
 
 type StatType string
 
-var (
+const (
 	Traditional     StatType = "Traditional"
 	Advanced                 = "Advanced"
 	Tracking                 = "Tracking"
@@ -489,7 +492,7 @@ var (
 
 type TypeGrouping string
 
-var (
+const (
 	Offensive           TypeGrouping = "offensive"
 	Defensive                        = "defensive"
 	DefaultTypeGrouping              = Offensive

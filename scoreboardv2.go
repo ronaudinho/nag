@@ -26,7 +26,7 @@ func NewScoreBoardV2() *ScoreBoardV2 {
 		Client:    NewDefaultClient(),
 		DayOffset: 0,
 		GameDate:  time.Now().Format("2006-01-02"),
-		LeagueID:  params.NBA,
+		LeagueID:  params.DefaultLeagueID,
 	}
 }
 
