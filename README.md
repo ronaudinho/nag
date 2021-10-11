@@ -72,7 +72,7 @@
 - [ ] leaguestandingsv3
 - [ ] matchupsrollup
 - [ ] playbyplay
-- [ ] playbyplayv2
+- [x] playbyplayv2
 - [ ] playerawards
 - [ ] playercareerbycollege
 - [ ] playercareerbycollegerollup
