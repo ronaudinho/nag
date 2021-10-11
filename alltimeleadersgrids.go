@@ -9,7 +9,7 @@ import (
 	"github.com/ronaudinho/nag/params"
 )
 
-// AllTimeLeadersGrids wraps request to and response from alltimeleadergrids endpoint.
+// AllTimeLeadersGrids wraps request to and response from alltimeleadersgrids endpoint.
 type AllTimeLeadersGrids struct {
 	*Client
 	LeagueID   params.LeagueID

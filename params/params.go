@@ -172,21 +172,18 @@ const (
 // PlusMinus(_YesNo):
 // PlusMinusNo(_No):
 
-type Period string
+type period struct{}
 
-const (
-	PeriodAll     Period = "0"
-	PeriodFirst          = "1"
-	PeriodSecond         = "2"
-	PeriodThird          = "3"
-	PeriodFourth         = "4"
-	DefaultPeriod        = PeriodAll
-)
+var Period = period{}
 
-var (
-	PeriodQuarter  = func(i int) string { return strconv.Itoa(i) }
-	PeriodOvertime = func(i int) string { return strconv.Itoa(4 + i) }
-)
+func (period) All() string           { return "0" }
+func (period) First() string         { return "1" }
+func (period) Second() string        { return "2" }
+func (period) Third() string         { return "3" }
+func (period) Fourth() string        { return "4" }
+func (period) Quarter(i int) string  { return strconv.Itoa(i) }
+func (period) Overtime(i int) string { return strconv.Itoa(4 + i) }
+func (p period) Default() string     { return p.All() }
 
 // StartPeriod(Period):
 // EndPeriod(Period):
