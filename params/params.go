@@ -185,9 +185,6 @@ func (period) Quarter(i int) string  { return strconv.Itoa(i) }
 func (period) Overtime(i int) string { return strconv.Itoa(4 + i) }
 func (p period) Default() string     { return p.All() }
 
-// StartPeriod(Period):
-// EndPeriod(Period):
-
 type PerMode string
 
 const (

@@ -13,7 +13,7 @@
 - [ ] boxscoreplayertrackv2
 - [ ] boxscorescoringv2
 - [ ] boxscoresimilarityscore
-- [ ] boxscoresummaryv2
+- [x] boxscoresummaryv2
 - [ ] boxscoretraditionalv2
 - [ ] boxscoreusagev2
 - [ ] commonallplayers

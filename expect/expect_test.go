@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+const (
+	testGameID = "0012100038" // using existing game id
+)
+
 func isExpected(m map[string]interface{}, expect map[string][]string) bool {
 	for k, headers := range expect {
 		vv, ok := m[k]

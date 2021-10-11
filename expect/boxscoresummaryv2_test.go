@@ -7,8 +7,8 @@ import (
 	"github.com/ronaudinho/nag/expect"
 )
 
-func TestPlayByPlayV2_Get(t *testing.T) {
-	sbv2 := nag.NewPlayByPlayV2(testGameID)
+func TestBoxScoreSummaryV2_Get(t *testing.T) {
+	sbv2 := nag.NewBoxScoreSummaryV2(testGameID)
 	err := sbv2.Get()
 	if err != nil {
 		t.Error(err)
@@ -18,7 +18,7 @@ func TestPlayByPlayV2_Get(t *testing.T) {
 	}
 
 	m := nag.GetMap(*sbv2.Response)
-	if !isExpected(m, expect.PlayByPlayV2) {
+	if !isExpected(m, expect.BoxScoreSummaryV2) {
 		t.Error("unexpected datasets")
 	}
 }
