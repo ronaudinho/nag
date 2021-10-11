@@ -47,8 +47,3 @@ func (c *BoxScoreSummaryV2) Get() error {
 	c.Response = &res
 	return nil
 }
-
-// JSON formats response from boxscoresummaryv2 into JSON
-func (c *BoxScoreSummaryV2) JSON() (json.RawMessage, error) {
-	return GetJSON(*c.Response)
-}

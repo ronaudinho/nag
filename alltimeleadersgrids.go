@@ -59,8 +59,3 @@ func (c *AllTimeLeadersGrids) Get() error {
 	c.Response = &res
 	return nil
 }
-
-// JSON formats response from alltimeleadersgrids into JSON
-func (c *AllTimeLeadersGrids) JSON() (json.RawMessage, error) {
-	return GetJSON(*c.Response)
-}

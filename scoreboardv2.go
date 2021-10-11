@@ -57,8 +57,3 @@ func (c *ScoreBoardV2) Get() error {
 	c.Response = &res
 	return nil
 }
-
-// JSON formats response from scoreboardv2 into JSON
-func (c *ScoreBoardV2) JSON() (json.RawMessage, error) {
-	return GetJSON(*c.Response)
-}

@@ -61,8 +61,3 @@ func (c *AssistLeaders) Get() error {
 	c.Response = &res
 	return nil
 }
-
-// JSON formats response from assistleaders into JSON
-func (c *AssistLeaders) JSON() (json.RawMessage, error) {
-	return GetJSON(*c.Response)
-}

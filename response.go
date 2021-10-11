@@ -19,8 +19,8 @@ type ResultSet struct {
 	RowSet  [][]interface{} `json:"rowSet"`
 }
 
-// GetMap maps ResultSet(s) from Response based on name and headers.
-func GetMap(res Response) map[string]interface{} {
+// Map maps ResultSet(s) from Response based on name and headers.
+func Map(res Response) map[string]interface{} {
 	var resultSets []ResultSet
 	if res.ResultSets != nil {
 		resultSets = res.ResultSets
@@ -43,7 +43,7 @@ func GetMap(res Response) map[string]interface{} {
 	return m
 }
 
-// GetJSON returns a JSON representation of GetMap
-func GetJSON(res Response) (json.RawMessage, error) {
-	return json.Marshal(GetMap(res))
+// JSON returns a JSON representation of Map
+func JSON(res Response) (json.RawMessage, error) {
+	return json.Marshal(Map(res))
 }

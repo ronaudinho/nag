@@ -55,8 +55,3 @@ func (c *PlayByPlayV2) Get() error {
 	c.Response = &res
 	return nil
 }
-
-// JSON formats response from playbyplayv2 into JSON
-func (c *PlayByPlayV2) JSON() (json.RawMessage, error) {
-	return GetJSON(*c.Response)
-}
