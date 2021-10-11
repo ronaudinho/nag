@@ -1,4 +1,4 @@
-package nag_test
+package expect_test
 
 import (
 	"testing"
