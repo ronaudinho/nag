@@ -17,7 +17,7 @@ func TestAssistLeaders_Get(t *testing.T) {
 		t.Error("nil response")
 	}
 
-	m := nag.GetMap(*sbv2.Response)
+	m := nag.Map(*sbv2.Response)
 	if !isExpected(m, expect.AssistLeaders) {
 		t.Error("unexpected datasets")
 	}

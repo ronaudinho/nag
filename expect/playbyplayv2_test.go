@@ -17,7 +17,7 @@ func TestPlayByPlayV2_Get(t *testing.T) {
 		t.Error("nil response")
 	}
 
-	m := nag.GetMap(*sbv2.Response)
+	m := nag.Map(*sbv2.Response)
 	if !isExpected(m, expect.PlayByPlayV2) {
 		t.Error("unexpected datasets")
 	}
