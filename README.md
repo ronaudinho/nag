@@ -14,7 +14,7 @@
 - [ ] boxscorescoringv2
 - [ ] boxscoresimilarityscore
 - [x] boxscoresummaryv2
-- [ ] boxscoretraditionalv2
+- [x] boxscoretraditionalv2
 - [ ] boxscoreusagev2
 - [ ] commonallplayers
 - [ ] commonplayerinfo

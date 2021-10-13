@@ -296,9 +296,11 @@ const (
 	DefaultPtMeasureType               = SpeedDistance
 )
 
-type RangeType string
-
-const DefaultRangeType = "0"
+const (
+	DefaultStartRange = "0"
+	DefaultEndRange   = "0"
+	DefaultRangeType  = "0"
+)
 
 // Rank(_YesNo):
 // RankNo(_No):
@@ -306,10 +308,6 @@ const DefaultRangeType = "0"
 type RunType string
 
 const DefaultRunType RunType = "each second"
-
-type StartRange string
-
-const DefaultStartRange = "0"
 
 type Scope string
 
