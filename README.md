@@ -11,7 +11,7 @@
 - [ ] boxscorematchups
 - [x] boxscoremiscv2
 - [x] boxscoreplayertrackv2
-- [ ] boxscorescoringv2
+- [x] boxscorescoringv2
 - [ ] boxscoresimilarityscore
 - [x] boxscoresummaryv2
 - [x] boxscoretraditionalv2
