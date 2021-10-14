@@ -5,7 +5,7 @@
 - [x] alltimeleadersgrids
 - [x] assistleaders
 - [ ] assisttracker
-- [ ] boxscoreadvancedv2
+- [x] boxscoreadvancedv2
 - [ ] boxscoredefensive
 - [ ] boxscorefourfactorsv2
 - [ ] boxscorematchups
