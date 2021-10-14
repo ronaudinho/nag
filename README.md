@@ -7,7 +7,7 @@
 - [ ] assisttracker
 - [x] boxscoreadvancedv2
 - [x] boxscoredefensive
-- [ ] boxscorefourfactorsv2
+- [x] boxscorefourfactorsv2
 - [ ] boxscorematchups
 - [ ] boxscoremiscv2
 - [ ] boxscoreplayertrackv2
