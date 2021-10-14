@@ -10,7 +10,7 @@
 - [x] boxscorefourfactorsv2
 - [ ] boxscorematchups
 - [x] boxscoremiscv2
-- [ ] boxscoreplayertrackv2
+- [x] boxscoreplayertrackv2
 - [ ] boxscorescoringv2
 - [ ] boxscoresimilarityscore
 - [x] boxscoresummaryv2
