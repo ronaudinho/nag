@@ -7,6 +7,7 @@ import (
 const (
 	testGameID   = "0012100038" // using existing game id
 	testPlayerID = "201937"     // rubio
+	testTeamID   = "1610612748" // heat
 )
 
 func isExpected(m map[string]interface{}, expect map[string][]string) bool {

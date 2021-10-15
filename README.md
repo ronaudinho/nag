@@ -19,7 +19,7 @@
 - [x] commonallplayers
 - [x] commonplayerinfo
 - [x] commonplayoffseries
-- [ ] commonteamroster
+- [x] commonteamroster
 - [ ] commonteamyears
 - [ ] cumestatsplayergames
 - [ ] cumestatsplayer
