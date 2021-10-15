@@ -11,7 +11,7 @@ import (
 // AssistLeaders wraps request to and response from assistleaders endpoint.
 type AssistLeaders struct {
 	*Client
-	LeagueID     params.LeagueID
+	LeagueID     string
 	PerMode      params.PerMode
 	PlayerOrTeam params.PlayerOrTeam
 	Season       string
@@ -24,7 +24,7 @@ type AssistLeaders struct {
 func NewAssistLeaders() *AssistLeaders {
 	return &AssistLeaders{
 		Client:       NewDefaultClient(),
-		LeagueID:     params.DefaultLeagueID,
+		LeagueID:     params.LeagueID.Default(),
 		PerMode:      params.DefaultPerMode,
 		PlayerOrTeam: params.DefaultPlayerOrTeam,
 		Season:       params.CurrentSeason,
@@ -42,7 +42,7 @@ func (c *AssistLeaders) Get() error {
 	req.Header = DefaultStatsHeader
 
 	q := req.URL.Query()
-	q.Add("LeagueID", string(c.LeagueID))
+	q.Add("LeagueID", c.LeagueID)
 	q.Add("PerMode", string(c.PerMode))
 	q.Add("PlayerOrTeam", string(c.PlayerOrTeam))
 	q.Add("Season", c.Season)

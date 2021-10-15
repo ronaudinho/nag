@@ -12,7 +12,7 @@ import (
 // AllTimeLeadersGrids wraps request to and response from alltimeleadersgrids endpoint.
 type AllTimeLeadersGrids struct {
 	*Client
-	LeagueID   params.LeagueID
+	LeagueID   string
 	PerMode    params.PerMode
 	SeasonType params.SeasonType
 	TopX       int
@@ -24,7 +24,7 @@ type AllTimeLeadersGrids struct {
 func NewAllTimeLeadersGrids() *AllTimeLeadersGrids {
 	return &AllTimeLeadersGrids{
 		Client:     NewDefaultClient(),
-		LeagueID:   params.DefaultLeagueID,
+		LeagueID:   params.LeagueID.Default(),
 		PerMode:    params.DefaultPerMode,
 		SeasonType: params.DefaultSeasonType,
 		TopX:       10,
@@ -41,7 +41,7 @@ func (c *AllTimeLeadersGrids) Get() error {
 	req.Header = DefaultStatsHeader
 
 	q := req.URL.Query()
-	q.Add("LeagueID", string(c.LeagueID))
+	q.Add("LeagueID", c.LeagueID)
 	q.Add("PerMode", string(c.PerMode))
 	q.Add("SeasonType", string(c.SeasonType))
 	q.Add("TopX", strconv.Itoa(c.TopX))

@@ -15,7 +15,7 @@ type ScoreBoardV2 struct {
 	*Client
 	DayOffset int
 	GameDate  string
-	LeagueID  params.LeagueID
+	LeagueID  string
 
 	Response *Response
 }
@@ -26,7 +26,7 @@ func NewScoreBoardV2() *ScoreBoardV2 {
 		Client:    NewDefaultClient(),
 		DayOffset: 0,
 		GameDate:  time.Now().Format("2006-01-02"),
-		LeagueID:  params.DefaultLeagueID,
+		LeagueID:  params.LeagueID.Default(),
 	}
 }
 
@@ -42,7 +42,7 @@ func (c *ScoreBoardV2) Get() error {
 	q := req.URL.Query()
 	q.Add("DayOffset", strconv.Itoa(c.DayOffset))
 	q.Add("GameDate", c.GameDate)
-	q.Add("LeagueID", string(c.LeagueID))
+	q.Add("LeagueID", c.LeagueID)
 	req.URL.RawQuery = q.Encode()
 
 	b, err := c.Do(req)

@@ -126,15 +126,15 @@ var (
 	DefaultLastNGames = "0"
 )
 
-type LeagueID string
+type leagueID struct{}
 
-const (
-	NBA             LeagueID = "00"
-	ABA                      = "01"
-	WNBA                     = "10"
-	GLeague                  = "20"
-	DefaultLeagueID          = NBA
-)
+var LeagueID = leagueID{}
+
+func (leagueID) NBA() string       { return "00" }
+func (leagueID) ABA() string       { return "01" }
+func (leagueID) WNBA() string      { return "10" }
+func (leagueID) GLeague() string   { return "20" }
+func (l leagueID) Default() string { return l.NBA() }
 
 type Location string
 

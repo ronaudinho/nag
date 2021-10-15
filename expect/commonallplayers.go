@@ -1,0 +1,5 @@
+package expect
+
+var CommonAllPlayers = map[string][]string{
+	"CommonAllPlayers": []string{"PERSON_ID", "DISPLAY_LAST_COMMA_FIRST", "DISPLAY_FIRST_LAST", "ROSTERSTATUS", "FROM_YEAR", "TO_YEAR", "PLAYERCODE", "TEAM_ID", "TEAM_CITY", "TEAM_NAME", "TEAM_ABBREVIATION", "TEAM_CODE", "GAMES_PLAYED_FLAG", "OTHERLEAGUE_EXPERIENCE_CH"},
+}
