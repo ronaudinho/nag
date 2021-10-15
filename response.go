@@ -6,10 +6,10 @@ import (
 
 // Response represents response from NBA endpoint.
 type Response struct {
-	Resource   string                 `json:"resource"`
-	Parameters map[string]interface{} `json:"parameters"`
-	ResultSet  ResultSet              `json:"resultSet"`
-	ResultSets []ResultSet            `json:"resultSets"`
+	Resource string `json:"resource"`
+	// Parameters map[string]interface{} `json:"parameters"`
+	ResultSet  ResultSet   `json:"resultSet"`
+	ResultSets []ResultSet `json:"resultSets"`
 }
 
 // ResultSet represents relevant data from Response.

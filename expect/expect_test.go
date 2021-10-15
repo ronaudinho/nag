@@ -5,7 +5,8 @@ import (
 )
 
 const (
-	testGameID = "0012100038" // using existing game id
+	testGameID   = "0012100038" // using existing game id
+	testPlayerID = "201937"     // rubio
 )
 
 func isExpected(m map[string]interface{}, expect map[string][]string) bool {
