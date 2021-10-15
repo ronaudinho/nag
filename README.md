@@ -18,7 +18,7 @@
 - [x] boxscoreusagev2
 - [x] commonallplayers
 - [x] commonplayerinfo
-- [ ] commonplayoffseries
+- [x] commonplayoffseries
 - [ ] commonteamroster
 - [ ] commonteamyears
 - [ ] cumestatsplayergames
