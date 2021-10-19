@@ -37,7 +37,7 @@
 - [ ] franchisehistory
 - [ ] franchiseleaders
 - [ ] franchiseplayers
-- [ ] gamerotation
+- [x] gamerotation
 - [ ] glalumboxscoresimilarityscore
 - [ ] homepageleaders
 - [ ] homepagev2
