@@ -122,7 +122,7 @@
 - [ ] teamdetails
 - [ ] teamestimatedmetrics
 - [x] teamgamelog
-- [ ] teamgamelogs
+- [x] teamgamelogs
 - [ ] teamgamestreakfinder
 - [ ] teamhistoricalleaders
 - [ ] teaminfocommon
