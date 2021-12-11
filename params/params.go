@@ -341,11 +341,10 @@ type SeasonType string
 const (
 	Regular           SeasonType = "Regular Season"
 	PreSeason                    = "Pre Season"
+	Playoffs                     = "Playoff"
+	AllStar                      = "All Star"
 	DefaultSeasonType            = Regular
 )
-
-// SeasonTypePlayoffs(SeasonType):
-// SeasonTypeAllStar(SeasonTypePlayoffs):
 
 type SeasonSegment string
 

@@ -121,7 +121,7 @@
 - [ ] teamdashptshots
 - [ ] teamdetails
 - [ ] teamestimatedmetrics
-- [ ] teamgamelog
+- [x] teamgamelog
 - [ ] teamgamelogs
 - [ ] teamgamestreakfinder
 - [ ] teamhistoricalleaders
