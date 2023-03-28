@@ -17,7 +17,7 @@ type AllTimeLeadersGrids struct {
 	SeasonType params.SeasonType
 	TopX       int
 
-	Response *Response
+	Response *Response // TODO why did I embed response here?
 }
 
 // NewAllTimeLeadersGrids creates a default AllTimeLeadersGrids instance.
@@ -52,6 +52,9 @@ func (c *AllTimeLeadersGrids) Get() error {
 		return err
 	}
 
+	// TODO
+	// 1. why did I embed response here?
+	// 2. would it be better to return a pointer of response?
 	var res Response
 	if err := json.Unmarshal(b, &res); err != nil {
 		return err

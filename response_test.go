@@ -7,7 +7,7 @@ import (
 	"github.com/ronaudinho/nag"
 )
 
-func TestGetJSON(t *testing.T) {
+func TestJSON(t *testing.T) {
 	tests := []struct {
 		name string
 		res  json.RawMessage
@@ -55,7 +55,7 @@ func TestGetJSON(t *testing.T) {
 
 			var res nag.Response
 			json.Unmarshal(tt.res, &res)
-			got, _ := nag.GetJSON(res)
+			got, _ := nag.JSON(res)
 			if string(got) != string(want) {
 				t.Errorf("want:\n%s\ngot:\n%s\n", string(want), string(got))
 			}
